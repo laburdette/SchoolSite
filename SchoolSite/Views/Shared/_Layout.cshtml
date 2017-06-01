@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Turing University - Faculty Web Portal</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    
+
+</head>
+<body style="background-color:azure">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle"
+                        data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+
+            <!--  YOU WILL NEED TO CHANGE: 'About' and 'Contact' to
+            the correct Views, and then change the path names they go through
+            below:
+                          -->
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a class="navbar-collapse"
+                           href="/home">
+                            <img src="~/Content/Images/universitycrest.jpg"
+                                 width="50" height="38" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        @Html.ActionLink("Home", "Index","Home")
+                </li> <!--Don't change this one, it's for the 'home' link-->
+                
+                    <li>@Html.ActionLink("Students", "Index", "Students")</li>
+                    <li>@Html.ActionLink("Enrollments", "Index", "Enrollments")</li>
+                    <li>@Html.ActionLink("Courses", "Index", "Courses")</li>
+
+        </ul>
+        @Html.Partial("_LoginPartial")
+    </div>
+</div>
+</div>
+
+<!-- Don't change anything below this line-->
+
+<div class="container body-content">
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; 2017 Team Awesome, Inc. </p>
+    </footer>
+</div>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
+</body>
+</html>

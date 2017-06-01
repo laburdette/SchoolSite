@@ -1,0 +1,50 @@
+﻿@model SchoolSite.Models.Enrollment
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Enrollment</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Courses.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Courses.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Students.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Students.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GPA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GPA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isEnrolled)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isEnrolled)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
